@@ -1,34 +1,75 @@
-import React from 'react'
+// import React from 'react'
+// const Login = () => {
+//     const [userData,setUserData]=useState({
+//         email:"",
+//         password:""
+//     })
+//     const handleChange=(e)=>{
+//         setUserData((prev)=>({...prev,[e.target.name]:e.target.value}));
+//     }
+//     const handleSubmit=(e)=>{
+//         e.preventDefault();
+//         console.log(userData);
+//   return (
+//     <div>
+
+//         <form onSubmit={handleSubmit}>
+//             <label>Email:</label>
+//             <input type="email" 
+//             value={userData.email} 
+//             name="email"
+//             placeholder='Enter email'/>
+//             <label>Password:</label>
+//             <input type="password" 
+//             name="password"
+//             value={userData.password}
+//             onChange={handleChange}/>
+//             <button>login</button>
+//         </form>
+//     </div>
+//   )
+// }
+// }
+
+// export default Login;
+
+import React,{useState} from 'react'
+
 const Login = () => {
     const [userData,setUserData]=useState({
         email:"",
         password:""
     })
     const handleChange=(e)=>{
-        setUserData((prev)=>({...prev,[e.target.name]:e.target.value}));
+        setUserData((prev)=>({...prev,[e.target.name]:e.target.value}))
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log(userData);
+    }
   return (
     <div>
-
         <form onSubmit={handleSubmit}>
-            <label>Email:</label>
+            <label>Email :</label>
             <input type="email" 
             value={userData.email} 
-            name="email"
-            placeholder='Enter email'/>
-            <label>Password:</label>
+            name="email" 
+            onChange={handleChange} 
+            placeholder='Enter the Email'/>
+            <br></br>
+            <br></br>
+            <label>password:</label>
             <input type="password" 
-            name="password"
-            value={userData.password}
-            onChange={handleChange}/>
-            <button>login</button>
+            value={userData.password} 
+            name="password" 
+            onChange={handleChange}
+            placeholder='Enter the password'/>
+            <br></br>
+            <br></br>
+            <button type="submit"> Login </button>
         </form>
     </div>
   )
 }
-}
 
-export default Login;
+export default Login
